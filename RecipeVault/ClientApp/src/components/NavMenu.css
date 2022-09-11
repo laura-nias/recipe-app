@@ -1,0 +1,30 @@
+﻿a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+    color: #fff5e9;
+    font-family: SignPainter;
+    font-size: 40px;
+}
+
+.navbar .container {
+    justify-content: center;
+}
+
+header {
+    background-color: #244742;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}

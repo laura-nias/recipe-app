@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1703.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeVault", "RecipeVault\RecipeVault.csproj", "{F1BDE45E-64F7-4283-9CDF-580028FD241B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{0A9738A0-7166-4145-A9CE-84B65FCC3EA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1BDE45E-64F7-4283-9CDF-580028FD241B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1BDE45E-64F7-4283-9CDF-580028FD241B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1BDE45E-64F7-4283-9CDF-580028FD241B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1BDE45E-64F7-4283-9CDF-580028FD241B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9738A0-7166-4145-A9CE-84B65FCC3EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9738A0-7166-4145-A9CE-84B65FCC3EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9738A0-7166-4145-A9CE-84B65FCC3EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9738A0-7166-4145-A9CE-84B65FCC3EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {501764F7-9282-47EB-A74C-F0E9CE00CFD5}
+	EndGlobalSection
+EndGlobal

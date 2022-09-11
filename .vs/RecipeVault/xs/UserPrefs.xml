@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{F1BDE45E-64F7-4283-9CDF-580028FD241B}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RecipeVault/Controllers/RecipeController.cs">
+    <Files>
+      <File FileName="RecipeVault/Controllers/RecipeController.cs" Line="111" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RecipeVault" expanded="True">
+            <Node name="RecipeVault" expanded="True">
+              <Node name="ClientApp" expanded="True">
+                <Node name="public" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.RecipeVault PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

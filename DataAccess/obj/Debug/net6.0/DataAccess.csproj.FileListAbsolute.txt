@@ -10,3 +10,15 @@
 /Users/laura/Projects/RecipeVault/DataAccess/obj/Debug/net6.0/refint/DataAccess.dll
 /Users/laura/Projects/RecipeVault/DataAccess/obj/Debug/net6.0/DataAccess.pdb
 /Users/laura/Projects/RecipeVault/DataAccess/obj/Debug/net6.0/ref/DataAccess.dll
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/bin/Debug/net6.0/DataAccess.deps.json
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/bin/Debug/net6.0/DataAccess.dll
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/bin/Debug/net6.0/DataAccess.pdb
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/Debug/net6.0/DataAccess.csproj.AssemblyReference.cache
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/Debug/net6.0/DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfoInputs.cache
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfo.cs
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/Debug/net6.0/DataAccess.csproj.CoreCompileInputs.cache
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/Debug/net6.0/DataAccess.dll
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/Debug/net6.0/refint/DataAccess.dll
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/Debug/net6.0/DataAccess.pdb
+/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/Debug/net6.0/ref/DataAccess.dll

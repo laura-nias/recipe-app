@@ -875,11 +875,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/laura/Projects/RecipeVault/DataAccess/DataAccess.csproj",
+      "projectUniqueName": "/Users/laura/Documents/GitHub/RecipeApp/DataAccess/DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "/Users/laura/Projects/RecipeVault/DataAccess/DataAccess.csproj",
+      "projectPath": "/Users/laura/Documents/GitHub/RecipeApp/DataAccess/DataAccess.csproj",
       "packagesPath": "/Users/laura/.nuget/packages/",
-      "outputPath": "/Users/laura/Projects/RecipeVault/DataAccess/obj/",
+      "outputPath": "/Users/laura/Documents/GitHub/RecipeApp/DataAccess/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/laura/.nuget/NuGet/NuGet.Config"

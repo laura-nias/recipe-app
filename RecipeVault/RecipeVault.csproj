@@ -40,14 +40,12 @@
     <None Remove="MySql.Data" />
     <None Remove="Models\" />
     <None Remove="Dapper" />
-    <None Remove="ClientApp\public\Resource\" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="ClientApp\public\Resource\" />
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>

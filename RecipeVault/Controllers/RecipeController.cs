@@ -111,7 +111,14 @@ namespace RecipeVault.Controllers
         {
             try
             {
-                string path = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp/public/Resource/Images", file.FileName);
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp/public/Resource/Images");
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                path += "/" + file.FileName;
 
                 using (Stream stream = new FileStream(path, FileMode.Create))
                 {

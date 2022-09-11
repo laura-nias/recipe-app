@@ -1,4 +1,6 @@
 ﻿using DataAccess;
+using Microsoft.EntityFrameworkCore;
+using RecipeVault.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 //ConfigurationManager configuration = builder.Configuration;
 
-var connectionString = builder.Configuration.GetConnectionString("default");
+var connectionString = builder.Configuration.GetConnectionString("RecipeDatabase");
+builder.Services.AddDbContext<DataContext>(options =>
+ options.UseSqlite(connectionString));
 
 builder.Services.AddControllersWithViews();
 

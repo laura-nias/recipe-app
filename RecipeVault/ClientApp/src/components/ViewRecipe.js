@@ -42,7 +42,7 @@ export class ViewRecipe extends Component {
             ingredients: data.ingredients,
             method: data.method,
             notes: data.notes,
-            image: data.image_id
+            image: data.image
         }, () => {
             this.handleData();
         });
@@ -83,7 +83,7 @@ export class ViewRecipe extends Component {
                     <button className="btn-recipe-close" onClick={this.props.showModal}>X</button>
                     {this.state.edit ? <><RecipeForm recipe={this.props.recipe} handleChange={this.handleChange} handleSubmit={this.pullData} edit={this.state.edit} /> <ImageUpload /></> :
                         <>
-                            <img className="recipe-image" src={`../Resource/Images/${this.props.recipe.image_id}`}></img>
+                            <img className="recipe-image" src={`../Resource/Images/${this.props.recipe.image}`}></img>
                             <div className="recipe-header">
                                 <h3 className="recipe-title">{this.props.recipe.title}</h3>
                                 <h4 className="recipe-description"><em>{this.props.recipe.description}</em></h4>

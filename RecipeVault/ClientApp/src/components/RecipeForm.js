@@ -23,7 +23,7 @@ export class RecipeForm extends Component {
     }
 
     handletest() {
-        this.props.handleSubmit(this.state)
+        this.props.handleSubmit(this.state);
     }
 
     render() {

@@ -6,6 +6,7 @@ using DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using RecipeVault.Models;
 using Microsoft.Extensions.Configuration;
+using RecipeVault.Data;
 
 namespace RecipeVault.Controllers
 {
@@ -17,29 +18,32 @@ namespace RecipeVault.Controllers
         private MainDataAccess access = new MainDataAccess();
         private readonly IWebHostEnvironment _webHostEnvironment;
         private IConfiguration _config;
+        private DataContext _context;
         private IEnumerable<Recipes> Recipes;
 
-        public RecipeController(ILogger<RecipeController> logger, IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
+        public RecipeController(ILogger<RecipeController> logger, IConfiguration configuration, IWebHostEnvironment webHostEnvironment, DataContext context)
         {
             logger = _logger;
             _config = configuration;
+            _context = context;
             _webHostEnvironment = webHostEnvironment;
         }
 
         [HttpGet]
         public IEnumerable<Recipes> Get()
         {
-            string sql = "SELECT * FROM recipes";
+            //string sql = "SELECT * FROM recipes";
 
-            Recipes = access.LoadData<Recipes, dynamic>(sql, new { }, _config.GetConnectionString("default"));
+            //Recipes = access.LoadData<Recipes, dynamic>(sql, new { }, _config.GetConnectionString("default"));
+
+            Recipes = _context.Recipes.ToList();
 
             return Recipes;
 
         }
 
-        [HttpPost]
         [Route("postcipe")]
-        public IActionResult PostRecipe([FromForm] Recipes recipe)
+        public void PostRecipe([FromForm] Recipes recipe)
         {
             try
             {
@@ -49,19 +53,20 @@ namespace RecipeVault.Controllers
                 string ingredients = recipe.ingredients;
                 string method = recipe.method;
                 string notes = recipe.notes;
-                string image = recipe.image_id;
+                string image = recipe.image;
 
-                string sql = "INSERT INTO recipes (title, description, time, ingredients, method, notes, image_id) VALUES (@title, @description, @time, @ingredients, @method, @notes, @image)";
-                
-                access.AddData(sql, new {title = title, description = description, time = time, ingredients = ingredients, method = method, notes = notes, image = image}, _config.GetConnectionString("default"));
-                
-                return StatusCode(StatusCodes.Status201Created);
+                _context.Recipes.Add(recipe);
+                _context.SaveChanges();
+
             }
             catch (Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError);
+
             }
         }
+
+
+
 
         [HttpDelete("{id:int}")]
         [Route("delete/{id:int}")]
@@ -69,9 +74,10 @@ namespace RecipeVault.Controllers
         {
             try
             {
-                string sql = "DELETE FROM recipes WHERE id = @id";
+                Recipes SelectedRecipe = _context.Recipes.Where(c => c.id == id).First();
 
-                access.RemoveData(sql, new { id = id }, _config.GetConnectionString("default"));
+                _context.Recipes.Remove(SelectedRecipe);
+                _context.SaveChanges();
 
                 return StatusCode(StatusCodes.Status200OK);
             }
@@ -81,29 +87,16 @@ namespace RecipeVault.Controllers
             }
         }
 
-        [HttpPut("{id:int}")]
         [Route("edit/{id:int}")]
         public IActionResult UpdateRecipe([FromForm] Recipes recipe, int id)
         {
             try
             {
-                string title = recipe.title;
-                string description = recipe.description;
-                int time = recipe.time;
-                string ingredients = recipe.ingredients;
-                string method = recipe.method;
-                string notes = recipe.notes;
-                string image = recipe.image_id;
+                Recipes selectedRecipe = _context.Recipes.Where(c => c.id == id).First();
 
-                string sql = @"UPDATE recipes SET title = @title,
-                                                 description = @description,
-                                                 time = @time,
-                                                 ingredients = @ingredients,
-                                                 method = @method,
-                                                 notes = @notes
-                                                 image_id = @image WHERE id = @id";
+                selectedRecipe = recipe;
 
-                access.UpdateData(sql, new {title = title, description = description, time = time, ingredients = ingredients, method = method, notes = notes, image = image, id = id }, _config.GetConnectionString("default"));
+                _context.SaveChanges();
                 
                 return StatusCode(StatusCodes.Status200OK);
             }
@@ -114,22 +107,21 @@ namespace RecipeVault.Controllers
         }
 
         [Route("uploadtest")]
-        public IActionResult UploadTest([FromForm]FileModel file)
+        public void UploadTest([FromForm]FileModel file)
         {
             try
             {
-                string path = Path.Combine(Directory.GetCurrentDirectory(), "Resource/Images", file.FileName);
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp/public/Resource/Images", file.FileName);
 
                 using (Stream stream = new FileStream(path, FileMode.Create))
                 {
                     file.FormFile.CopyTo(stream);
                 }
 
-                return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError);
+                
             }
          
         }

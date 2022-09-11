@@ -42,6 +42,7 @@ export class AddRecipe extends Component {
         formData.append("notes", this.state.notes);
         formData.append("image", this.state.image);
 
+
         const response = await fetch('recipe/postcipe', {
             method: "POST",
             body: formData
@@ -57,7 +58,7 @@ export class AddRecipe extends Component {
                 <div className="overlay"></div>
                 <div className="modal">
                     <button className="btn-close" onClick={this.props.showModal}>X</button>
-                    <h3 >Add New Recipe</h3>
+                    <h3>Add New Recipe</h3>
                     <RecipeForm recipe={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
                     <ImageUpload getFile={this.getFile} />
                 </div>
